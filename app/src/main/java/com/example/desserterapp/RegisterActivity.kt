@@ -30,8 +30,11 @@ class RegisterActivity : AppCompatActivity() {
                 Integer.parseInt(daysText.text.toString())
             )
 
+            var weight = Integer.parseInt(currentWeightText.text.toString())
+
             editor.apply {
                 putInt("calorie_goal", calorieGoal).commit()
+                putInt("weight", weight)
             }
 
             Toast.makeText(this, "Sucessfully registered", Toast.LENGTH_SHORT).show()

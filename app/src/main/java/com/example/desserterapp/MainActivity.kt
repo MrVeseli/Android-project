@@ -11,8 +11,6 @@ import android.widget.TextView
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-//TODO unos kalorija i workouta mogu biti dva odvojena fragmenta
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
             .putBoolean("isFirstRun", false).apply();
 
-        //data setup on load
+        // Data setup on load
         var currentDailyCalories = sharedPreferences.getInt("current_daily_calories", 0)
         if (isNewDay()) {
            currentDailyCalories = 0
@@ -87,8 +85,6 @@ class MainActivity : AppCompatActivity() {
         suggestMealButton.setOnClickListener {
             startActivity(Intent(this, MealIdeasActivity::class.java));
         }
-
-        // For making sure that the counter resets each day
     }
 
     override fun onDestroy() {
@@ -117,7 +113,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calculateWorkoutCalories(duration: Int): Int {
-        return (duration * 11.78).toInt()
+        val sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE)
+        val weight = sharedPreferences.getInt("weight", 0)
+        val MET = 3.5
+
+        return (duration * MET * weight / 200).toInt()
     }
 
     fun updateOutput(currentDailyCalories: Int) {
