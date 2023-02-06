@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
 
             editor.apply {
                 putInt("calorie_goal", calorieGoal).commit()
-                putInt("weight", weight)
+                putInt("weight", weight).commit()
             }
 
             Toast.makeText(this, "Sucessfully registered", Toast.LENGTH_SHORT).show()

@@ -73,7 +73,7 @@ class RecipeRecyclerAdapter(private val context: Context, private val items: Lis
             toPass.putString("servings", recipe.servings)
             toPass.putString("instructions", recipe.instructions)
 
-            val intent = Intent(context, RecipeDetailActivity2::class.java)
+            val intent = Intent(context, RecipeDetailActivity::class.java)
             intent.putExtras(toPass)
             context.startActivity(intent)
         }
