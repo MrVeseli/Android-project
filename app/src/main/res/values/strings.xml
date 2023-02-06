@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Desserter</string>
+    <string name="input_current_weight">Input current weight(kg)</string>
+    <string name="input_desired_weight">Input desired weight(kg)</string>
+    <string name="input_days">Input target interval(days)</string>
+    <string name="vegan_toggle">Vegan</string>
+    <string name="register">Register</string>
+
+    <string name="calories_number">No. of calories</string>
+    <string name="input_food">Input calories per 100g</string>
+    <string name="input_amount">Input amount(g) you ate</string>
+    <string name="add_meal">Add meal</string>
+    <string name="input_workout_time">Input workout duration (min)</string>
+    <string name="add_workout">Add workout</string>
+    <string name="suggest_meal">Suggest a meal</string>
+
+    <string name="find_meal">Search for recipes</string>
+    <string name="fish">Fish</string>
+    <string name="search">Search</string>
+
+    <string name="meal">Meal 1</string>
+</resources>
