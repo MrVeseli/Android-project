@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-            .putBoolean("isFirstRun", false).commit();
+            .putBoolean("isFirstRun", false).apply();
 
         //data setup on load
         var currentDailyCalories = sharedPreferences.getInt("current_daily_calories", 0)
@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
 
         // Getting all input components
         updateOutput(currentDailyCalories)
+        editor.apply {
+            putInt("current_daily_calories", currentDailyCalories).apply()
+        }
 
         val nutritionInput = findViewById<EditText>(R.id.editNutritonNumber)
         val amountInput = findViewById<EditText>(R.id.editAmountNumber)
@@ -62,6 +65,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             updateOutput(currentDailyCalories)
+            editor.apply {
+                putInt("current_daily_calories", currentDailyCalories).apply()
+            }
         }
 
         addWorkoutButton.setOnClickListener {
@@ -73,6 +79,9 @@ class MainActivity : AppCompatActivity() {
                 Log.e("ERROR_SUB","Error with subtracting calories.")
             }
             updateOutput(currentDailyCalories)
+            editor.apply {
+                putInt("current_daily_calories", currentDailyCalories).apply()
+            }
         }
 
         suggestMealButton.setOnClickListener {
@@ -80,11 +89,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         // For making sure that the counter resets each day
+    }
+
+    override fun onDestroy() {
+        val sharedPreferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
         var dayLastClosed = LocalDate.now().dayOfYear
         editor.apply {
-            putInt("day_last_open", dayLastClosed).commit()
-            putInt("current_daily_calories", currentDailyCalories).commit()
+            putInt("day_last_open", dayLastClosed).apply()
         }
+        super.onDestroy()
     }
 
     fun isNewDay(): Boolean {
