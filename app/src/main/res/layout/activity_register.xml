@@ -6,25 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <Switch
-        android:id="@+id/veganSwitch"
-        android:layout_width="211dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/vegan_toggle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daysIntervalNumber" />
-
     <Button
         android:id="@+id/registerButton"
         android:layout_width="124dp"
         android:layout_height="62dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/veganSwitch" />
+        app:layout_constraintTop_toBottomOf="@+id/daysIntervalNumber" />
 
     <EditText
         android:id="@+id/currentWeightNumber"
@@ -33,6 +23,7 @@
         android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +35,7 @@
         android:layout_marginTop="60dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeightNumber" />
@@ -55,6 +47,7 @@
         android:layout_marginTop="60dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desiredWeightNumber" />
@@ -64,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/input_current_weight"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/currentWeightNumber"
         app:layout_constraintStart_toStartOf="@+id/currentWeightNumber" />
 
@@ -72,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/input_desired_weight"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/desiredWeightNumber"
         app:layout_constraintStart_toStartOf="@+id/desiredWeightNumber" />
 
@@ -80,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/input_days"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/daysIntervalNumber"
         app:layout_constraintStart_toStartOf="@+id/daysIntervalNumber" />
 

@@ -1,6 +1,7 @@
 package com.example.desserterapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,12 +10,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desserterapp.api.Recipe
 import com.example.desserterapp.api.RecipeApiEndPoints
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,7 +39,7 @@ class MealIdeasActivity : AppCompatActivity() {
                     if(response.isSuccessful) {
                         findViewById<RecyclerView>(R.id.mealRecyclerView).apply {
                             layoutManager = LinearLayoutManager(this@MealIdeasActivity)
-                            adapter = RecipeRecyclerAdapter(response.body()!!)
+                            adapter = RecipeRecyclerAdapter(this@MealIdeasActivity, response.body()!!)
                         }
                     }
                 }
@@ -48,18 +49,10 @@ class MealIdeasActivity : AppCompatActivity() {
                 }
             })
         }
-        //TODO tap na recept daje detalje o njemu
-    }
-
-    private fun initView() {
-        findViewById<RecyclerView>(R.id.mealRecyclerView).apply {
-            layoutManager = LinearLayoutManager(this@MealIdeasActivity)
-            adapter = RecipeRecyclerAdapter(ArrayList<Recipe>())
-        }
     }
 }
 
-class RecipeRecyclerAdapter(private val items: List<Recipe>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RecipeRecyclerAdapter(private val context: Context, private val items: List<Recipe>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return RecipeViewHolder(
@@ -68,18 +61,27 @@ class RecipeRecyclerAdapter(private val items: List<Recipe>): RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val recipe: Recipe = items.get(position)
         when(holder) {
             is RecipeViewHolder -> {
                 holder.bind(items[position])
             }
+        }
+        holder.itemView.setOnClickListener {
+            val toPass = Bundle()
+            toPass.putString("title", recipe.title)
+            toPass.putString("servings", recipe.servings)
+            toPass.putString("instructions", recipe.instructions)
+
+            val intent = Intent(context, RecipeDetailActivity::class.java)
+            intent.putExtras(toPass)
+            context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
-
-    //
 
     class RecipeViewHolder constructor(
         itemView: View

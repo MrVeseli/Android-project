@@ -2,15 +2,19 @@
     <!-- Base application theme. -->
     <style name="Theme.DesserterApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">#e9b08e</item>
+        <item name="colorPrimaryVariant">#ed6e3a</item>
+        <item name="colorOnPrimary">#a4330d</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">#6c9e4f</item>
+        <item name="colorSecondaryVariant">#3A681F</item>
+        <item name="colorOnSecondary">#5e3c2c</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorSurface">#dbcdb5</item>
+        <item name="colorOnSurface">#e9b08e</item>
+        <item name="android:colorBackground">#dbcdb5</item>
+        <item name="colorOnBackground">#e9b08e</item>
     </style>
 </resources>

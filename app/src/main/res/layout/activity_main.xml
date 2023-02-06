@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/calories_number"
+        android:textColor="@color/colorOnPrimary"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -53,6 +54,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caloriesTextView" />
@@ -64,6 +66,7 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNutritonNumber" />
@@ -84,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/input_food"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/editNutritonNumber"
         app:layout_constraintStart_toStartOf="@+id/editNutritonNumber" />
 
@@ -92,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/input_amount"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/editAmountNumber"
         app:layout_constraintStart_toStartOf="@+id/editAmountNumber" />
 
@@ -100,6 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/input_workout_time"
+        android:textColor="@color/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/editDurationNumber"
         app:layout_constraintStart_toStartOf="@+id/editDurationNumber" />
 
@@ -109,6 +115,7 @@
         android:layout_height="82dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/colorOnPrimary"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -23,7 +23,6 @@ class RegisterActivity : AppCompatActivity() {
             val currentWeightText = findViewById<EditText>(R.id.currentWeightNumber)
             val desiredWeightText = findViewById<EditText>(R.id.desiredWeightNumber)
             val daysText = findViewById<EditText>(R.id.daysIntervalNumber)
-            val isVegan = findViewById<Switch>(R.id.veganSwitch)
 
             val calorieGoal = calculateCalorieGoal(
                 Integer.parseInt(currentWeightText.text.toString()),
@@ -33,7 +32,6 @@ class RegisterActivity : AppCompatActivity() {
 
             editor.apply {
                 putInt("calorie_goal", calorieGoal).commit()
-                putBoolean("is_vegan", isVegan.isChecked).commit()
             }
 
             Toast.makeText(this, "Sucessfully registered", Toast.LENGTH_SHORT).show()

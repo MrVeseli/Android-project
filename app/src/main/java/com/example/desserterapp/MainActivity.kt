@@ -37,8 +37,7 @@ class MainActivity : AppCompatActivity() {
            currentDailyCalories = 0
         }
 
-        // Getting all components
-        val dailyCaloriesCounter = findViewById<TextView>(R.id.caloriesTextView)
+        // Getting all input components
         updateOutput(currentDailyCalories)
 
         val nutritionInput = findViewById<EditText>(R.id.editNutritonNumber)
@@ -49,8 +48,6 @@ class MainActivity : AppCompatActivity() {
         val addWorkoutButton = findViewById<Button>(R.id.addWorkoutButton)
 
         val suggestMealButton = findViewById<Button>(R.id.suggestMealButton)
-
-        val messageTextView = findViewById<TextView>(R.id.suggestMealButton)
 
         // Setting listeners for buttons
         addMealButton.setOnClickListener {
